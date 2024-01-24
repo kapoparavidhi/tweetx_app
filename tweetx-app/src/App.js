@@ -71,7 +71,7 @@ function App() {
             <>
               <Navbar />
               <Header />
-              <Profile user={currentUser} />
+              <Profile />
             </>
           }
         />
