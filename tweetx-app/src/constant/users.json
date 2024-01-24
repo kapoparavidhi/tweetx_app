@@ -1,0 +1,57 @@
+[
+  {
+    "userId": 1,
+    "name": {
+      "firstName": "John",
+      "lastName": "Doe"
+    },
+    "email": "john@example.com",
+    "password": "password123",
+    "followers": [2, 3],
+    "following": [4, 5]
+  },
+  {
+    "userId": 2,
+    "name": {
+      "firstName": "Jane",
+      "lastName": "Smith"
+    },
+    "email": "jane@example.com",
+    "password": "password456",
+    "followers": [1],
+    "following": [3, 4]
+  },
+  {
+    "userId": 3,
+    "name": {
+      "firstName": "Alice",
+      "lastName": "Johnson"
+    },
+    "email": "alice@example.com",
+    "password": "password789",
+    "followers": [1, 2],
+    "following": [5]
+  },
+  {
+    "userId": 4,
+    "name": {
+      "firstName": "Bob",
+      "lastName": "Miller"
+    },
+    "email": "bob@example.com",
+    "password": "passwordabc",
+    "followers": [2],
+    "following": [1, 5]
+  },
+  {
+    "userId": 5,
+    "name": {
+      "firstName": "Eve",
+      "lastName": "Taylor"
+    },
+    "email": "eve@example.com",
+    "password": "passwordefg",
+    "followers": [1, 3],
+    "following": [2, 4]
+  }
+]
