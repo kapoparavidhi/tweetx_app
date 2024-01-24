@@ -5,7 +5,7 @@ import posts from "../../constant/post.json";
 const Feed = ({ formData }) => {
   const [userPosts, setUserPosts] = useState(posts);
   const [isPopupOpen, setPopupOpen] = useState(false);
-
+  const [posts, setPosts] = useState(posts);
   useEffect(() => {
     localStorage.setItem("posts", JSON.stringify(userPosts));
     console.log(posts);

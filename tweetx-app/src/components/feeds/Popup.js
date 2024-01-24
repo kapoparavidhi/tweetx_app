@@ -5,14 +5,11 @@ const Popup = ({ onClose, onPost }, { fromData }) => {
 
   const handlePost = () => {
     if (sentence.trim() !== "") {
-      // Generate a unique post_id (you may use a more robust method)
       const post_id = new Date().getTime().toString();
       const created_time = new Date();
-      const user_id = 123;
-      // Trigger the onPost callback with the new post data
-      onPost({ post_id, description: sentence, created_time, user_id });
+      const userId = 1;
+      onPost({ post_id, description: sentence, created_time, userId });
 
-      // Close the popup
       onClose();
     } else {
       alert("Please enter a sentence before posting.");
@@ -32,16 +29,14 @@ const Popup = ({ onClose, onPost }, { fromData }) => {
         <div>
           <button
             class="bg-pink-400 hover:bg-pink-500 text-white font-bold py-2 px-4 border border-pink-500 rounded"
-            onClick={handlePost}
-          >
+            onClick={handlePost}>
             Post
           </button>
         </div>
         <div>
           <button
             class="bg-pink-400 hover:bg-pink-500 text-white font-bold py-2 px-4 border border-pink-500 rounded"
-            onClick={onClose}
-          >
+            onClick={onClose}>
             Cancel
           </button>
         </div>

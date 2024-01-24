@@ -17,6 +17,10 @@ import Signup from "./components/accounts/signup/Signup";
 import Login from "./components/accounts/login/Login";
 import users from "./constant/users.json";
 import Header from "./components/profile/Header";
+import ProfileHeader from "./components/profile/Header";
+import PostList from "./components/profile/PostList";
+import FollowersList from "./components/profile/FollowersList";
+import FollowingList from "./components/profile/FollowingList";
 
 function App() {
   // const [formData, setFormData] = useState({
@@ -26,7 +30,6 @@ function App() {
   //   confirmPassword: "",
   //   userId: "user123",
   // });
-  const user_id = "user123";
 
   const [formData, setFormData] = useState(users);
 
@@ -65,13 +68,53 @@ function App() {
             </>
           }
         />
-        <Route
+        {/* <Route
           path="profile"
           element={
             <>
               <Navbar />
               <Header />
               <Profile />
+            </>
+          }
+        /> */}
+        <Route
+          path="profile"
+          element={
+            <>
+              <Navbar />
+              <ProfileHeader />
+              <PostList />
+            </>
+          }
+        />
+        <Route
+          path="posts"
+          element={
+            <>
+              <Navbar />
+              <ProfileHeader />
+              <PostList />
+            </>
+          }
+        />
+        <Route
+          path="followers"
+          element={
+            <>
+              <Navbar />
+              <ProfileHeader />
+              <FollowersList />
+            </>
+          }
+        />
+        <Route
+          path="following"
+          element={
+            <>
+              <Navbar />
+              <ProfileHeader />
+              <FollowingList />
             </>
           }
         />

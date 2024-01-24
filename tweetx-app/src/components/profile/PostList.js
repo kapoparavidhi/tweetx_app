@@ -1,33 +1,32 @@
-// PostList.js
-import React, { useEffect, useState } from "react";
+// // PostList.js
+// import React from "react";
 
-const PostList = ({ userId }) => {
-  const [posts, setPosts] = useState([]);
+// const PostList = ({ posts, selectedUserId }) => {
+//   const selectedUserPosts = posts.filter(
+//     (post) => post.userid === selectedUserId
+//   );
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const response = await fetch(`./src/constant/post.json?userId=${userId}`);
-      const data = await response.json();
-      setPosts(data);
-    };
+//   return (
+//     <div>
+//       {selectedUserPosts.length > 0 ? (
+//         <ul>
+//           {selectedUserPosts.map((post) => (
+//             <li key={post.postId}>{post.description}</li>
+//           ))}
+//         </ul>
+//       ) : (
+//         <p>No posts by this user.</p>
+//       )}
+//     </div>
+//   );
+// };
 
-    fetchPosts();
-  }, [userId]);
+// export default PostList;
 
-  return (
-    <div>
-      <div>
-        <h2>Posts:</h2>
-        <ul>
-          {posts.map((post) => (
-            <li key={post.post_id}>
-              {post.description} - {post.timeAgo}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-};
+import React from "react";
+
+function PostList() {
+  return <div>PostList</div>;
+}
 
 export default PostList;
