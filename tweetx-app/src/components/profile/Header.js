@@ -3,8 +3,11 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const details = JSON.parse(localStorage.getItem("selectedUser") || "{}");
+  const posts = JSON.parse(localStorage.getItem("posts") || "[]");
 
   const { firstName, lastName } = useMemo(() => details.name, [details.name]);
+  const userPosts = posts.filter((post) => post.user_id === details.userId);
+
   return (
     <div>
       <div className="header">
@@ -19,7 +22,7 @@ const Header = () => {
             <div className="flex flex-row gap-5 mt-10">
               <div>
                 Post:
-                {details.following?.length}
+                {userPosts.length}
               </div>
               <div>
                 followers:
@@ -39,8 +42,7 @@ const Header = () => {
       <div className="flex justify-center items-center">
         <div
           className="hidden w-full md:block md:w-auto mr-20"
-          id="navbar-default"
-        >
+          id="navbar-default">
           <ul className="gap-20 ml-[100px] font-medium text-xl flex flex-col p-4 md:p-0  border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
               <NavLink
@@ -49,8 +51,7 @@ const Header = () => {
                   `block py-2 pr-4 pl-3 duration-200
                                  ${isActive ? "text-pink-500" : "text-gray-600"}
                                  border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-pink-600 lg:p-0`
-                }
-              >
+                }>
                 Posts
               </NavLink>
             </li>
@@ -61,8 +62,7 @@ const Header = () => {
                   `block py-2 pr-4 pl-3 duration-200
                                  ${isActive ? "text-pink-500" : "text-gray-700"}
                                  border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-pink-600 lg:p-0`
-                }
-              >
+                }>
                 Followers
               </NavLink>
             </li>
@@ -73,8 +73,7 @@ const Header = () => {
                   `block py-2 pr-4 pl-3 duration-200
                                  ${isActive ? "text-pink-500" : "text-gray-700"}
                                  border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-pink-600 lg:p-0`
-                }
-              >
+                }>
                 Following
               </NavLink>
             </li>

@@ -31,8 +31,7 @@ const Login = ({ onLogin }) => {
       <Link to="/">
         <button
           type="button"
-          className=" mt-20 flex justify-left ml-10 py-4 px-20 text-base font-medium  text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-500 hover:bg-black-500 hover:text-pink-400 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-        >
+          className=" mt-20 flex justify-left ml-10 py-4 px-20 text-base font-medium  text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-500 hover:bg-black-500 hover:text-pink-400 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
           Create Account
         </button>
       </Link>
@@ -75,8 +74,7 @@ const Login = ({ onLogin }) => {
               <button
                 onClick={handleLogin}
                 type="submit"
-                className="float-right px-7 bg-pink-500 text-white p-2 rounded-md hover:bg-pink-600 focus:outline-none focus:ring focus:border-pink-300"
-              >
+                className="float-right px-7 bg-pink-500 text-white p-2 rounded-md hover:bg-pink-600 focus:outline-none focus:ring focus:border-pink-300">
                 Login
               </button>
             </Link>
@@ -84,7 +82,7 @@ const Login = ({ onLogin }) => {
         </div>
       </div>
       <div className="absolute z-0 top-0 right-0">
-        <img src={bgImg} />
+        {/* <img src={bgImg} /> */}
       </div>
     </div>
   );
