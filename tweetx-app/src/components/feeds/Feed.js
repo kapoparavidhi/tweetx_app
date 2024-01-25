@@ -5,16 +5,27 @@ import { Link } from "react-router-dom";
 const Feed = () => {
   const [userPosts, setUserPosts] = useState(posts);
   const [userDetails, setUserDetails] = useState({});
+  // useEffect(() => {
+  //   localStorage.setItem("posts", JSON.stringify(userPosts));
+  //   const usersData = JSON.parse(localStorage.getItem("users")) || [];
+  //   const userDetailsMap = {};
+  //   usersData.forEach((user) => {
+  //     userDetailsMap[user.userId] = user;
+  //   });
+  //   setUserDetails(userDetailsMap);
+  // }, [userPosts]);
+
   useEffect(() => {
-    localStorage.setItem("posts", JSON.stringify(userPosts));
+    const storedPosts = JSON.parse(localStorage.getItem("posts")) || [];
+    setUserPosts(storedPosts);
+
     const usersData = JSON.parse(localStorage.getItem("users")) || [];
     const userDetailsMap = {};
     usersData.forEach((user) => {
       userDetailsMap[user.userId] = user;
     });
     setUserDetails(userDetailsMap);
-  }, [userPosts]);
-
+  }, []);
   const loggedInUserData = JSON.parse(localStorage.getItem("selectedUser"));
   const loggedInUserId = loggedInUserData ? loggedInUserData.userId : null;
 

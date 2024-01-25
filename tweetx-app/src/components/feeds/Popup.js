@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 
+import moment from "moment";
+
 const Popup = ({ onClose, onPost }, { fromData }) => {
   const [sentence, setSentence] = useState("");
 
   const handlePost = () => {
     if (sentence.trim() !== "") {
-      const post_id = new Date().getTime().toString();
-      const created_time = new Date();
+      const post_id = new Date().getTime();
+      let now = new Date();
+      let hour = now.getHours();
+      let minute = now.getMinutes();
+      let created_time = hour + ":" + minute;
       const user_Id = 1;
       onPost({ post_id, description: sentence, created_time, user_Id });
 
@@ -29,16 +34,14 @@ const Popup = ({ onClose, onPost }, { fromData }) => {
         <div>
           <button
             class="bg-pink-400 hover:bg-pink-500 text-white font-bold py-2 px-4 border border-pink-500 rounded"
-            onClick={handlePost}
-          >
+            onClick={handlePost}>
             Post
           </button>
         </div>
         <div>
           <button
             class="bg-pink-400 hover:bg-pink-500 text-white font-bold py-2 px-4 border border-pink-500 rounded"
-            onClick={onClose}
-          >
+            onClick={onClose}>
             Cancel
           </button>
         </div>

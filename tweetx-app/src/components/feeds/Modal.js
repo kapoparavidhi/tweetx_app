@@ -7,23 +7,25 @@ const Modal = () => {
   const [isPopupOpen, setPopupOpen] = useState(false);
   useEffect(() => {
     localStorage.setItem("posts", JSON.stringify(userPosts));
-    console.log(posts);
+    // console.log(posts);
   }, [userPosts]);
 
   const handlePost = (post) => {
     setUserPosts([...userPosts, post]);
+    localStorage.setItem("posts", JSON.stringify([...userPosts, post]));
+    handleClose();
+  };
+  const handleClose = () => {
+    setPopupOpen(false);
   };
   return (
-    <div>
+    <div className="flex justify-center">
       <button
-        className="mt-5 ml-[690px] text-white bg-pink-500 hover:bg-pink-400 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-pink-500 dark:hover:bg-pink-400 focus:outline-none dark:focus:ring-pink-500"
-        onClick={() => setPopupOpen(true)}
-      >
+        className="mt-5  text-white bg-pink-500 hover:bg-pink-400 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-pink-500 dark:hover:bg-pink-400 focus:outline-none dark:focus:ring-pink-500"
+        onClick={() => setPopupOpen(true)}>
         Write
       </button>
-      {isPopupOpen && (
-        <Popup onClose={() => setPopupOpen(false)} onPost={handlePost} />
-      )}
+      {isPopupOpen && <Popup onClose={handleClose} onPost={handlePost} />}
     </div>
   );
 };
