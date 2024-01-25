@@ -6,7 +6,6 @@ const UserList = () => {
   const [followingMap, setFollowingMap] = useState({});
 
   useEffect(() => {
-    // Fetch user data from local storage
     const usersData = JSON.parse(localStorage.getItem("users")) || [];
     setUsers(usersData);
 
@@ -29,7 +28,6 @@ const UserList = () => {
     }
 
     setFollowingMap(updatedFollowingMap);
-
     localStorage.setItem("followingMap", JSON.stringify(updatedFollowingMap));
   };
   return (

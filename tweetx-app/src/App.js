@@ -10,7 +10,6 @@ import { useState, useEffect } from "react";
 import Feed from "./components/feeds/Feed";
 //import ProfileLayout from "./router/ProfileLayout";
 import Users from "./components/users/Users";
-import Profile from "./components/profile/Profile";
 import { Route, Routes, Router } from "react-router-dom";
 import Navbar from "./navbar/Navbar";
 import Signup from "./components/accounts/signup/Signup";
@@ -24,14 +23,6 @@ import FollowingList from "./components/profile/FollowingList";
 import Modal from "./components/feeds/Modal";
 
 function App() {
-  // const [formData, setFormData] = useState({
-  //   name: "",
-  //   email: "",
-  //   password: "",
-  //   confirmPassword: "",
-  //   userId: "user123",
-  // });
-
   const [formData, setFormData] = useState(users);
 
   const handleSignUp = (user) => {
@@ -43,9 +34,6 @@ function App() {
     localStorage.setItem("users", JSON.stringify(formData));
     console.log(users);
   }, [formData]);
-
-  const [currentUser, setCurrentUser] = useState(null);
-  // setCurrentUser(loggedInUserData);
 
   return (
     <div>

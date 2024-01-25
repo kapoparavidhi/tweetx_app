@@ -30,7 +30,6 @@ const SignUp = ({ onSignUp }) => {
       following: [],
     };
 
-    // Trigger the onSignUp callback with the new user data
     onSignUp(newUser);
   };
 

@@ -12,7 +12,6 @@ const Feed = () => {
     usersData.forEach((user) => {
       userDetailsMap[user.userId] = user;
     });
-
     setUserDetails(userDetailsMap);
   }, [userPosts]);
 
@@ -39,8 +38,6 @@ const Feed = () => {
           {filteredPosts.map((post) => (
             <li key={post.post_id}>
               <div className="shadow-lg rounded-xl p-8">
-                {/* {userDetails[post.user_id]?.name?.firstName.charAt(0)}
-              {userDetails[post.user_id]?.name?.lastName.charAt(0)} */}
                 <div className="flex gap-7">
                   <div className="h-16 min-w-16 border border-gray-500 rounded-full flex items-center justify-center">
                     {userDetails[post.user_id]?.name?.firstName.charAt(0)}

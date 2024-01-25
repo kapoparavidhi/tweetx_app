@@ -1,8 +1,6 @@
-// Modal.js
 import { React, useState, useEffect } from "react";
 import Popup from "./Popup";
 import posts from "../../constant/post.json";
-import { Link } from "react-router-dom";
 
 const Modal = () => {
   const [userPosts, setUserPosts] = useState(posts);

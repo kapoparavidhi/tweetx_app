@@ -9,22 +9,14 @@ const Login = ({ onLogin }) => {
   const history = useNavigate();
 
   const handleLogin = () => {
-    // Retrieve user data from local storage
     const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
 
-    // Find user with matching email and password
     const user = storedUsers.find(
       (u) => u.email === email && u.password === password
     );
 
     if (user) {
-      // Set the current user in the parent component
-      // onLogin(user);
-
       localStorage.setItem("selectedUser", JSON.stringify(user));
-      // console.log({ user, email, password });
-      // console.log(user.toString());
-      // Redirect to the feed page (you need to define the route for the feed page)
       history("/feed");
     } else {
       alert("Invalid email or password. Please try again.");

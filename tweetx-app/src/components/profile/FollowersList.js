@@ -2,19 +2,15 @@ import React from "react";
 
 const FollowersList = () => {
   const loggedInUserData = JSON.parse(localStorage.getItem("selectedUser"));
-
   const followers = loggedInUserData ? loggedInUserData.followers : [];
   const following = loggedInUserData ? loggedInUserData.following : [];
-  // Step 3: Retrieve all users data from localStorage
   const allUsersData = JSON.parse(localStorage.getItem("users")) || [];
 
-  // Step 4: Filter users based on followers array
   const filteredUsers = allUsersData.filter((user) =>
     followers.includes(user.userId)
   );
 
   const handleFollow = (userId) => {
-    // Implement your logic for handling the "Follow" action here
     console.log(`Followed user with ID ${userId}`);
   };
   localStorage.setItem("selectedUser", JSON.stringify(loggedInUserData));

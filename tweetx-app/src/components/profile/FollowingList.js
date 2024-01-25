@@ -2,9 +2,7 @@ import React from "react";
 
 const FollowingList = () => {
   const loggedInUserData = JSON.parse(localStorage.getItem("selectedUser"));
-
   const following = loggedInUserData ? loggedInUserData.following : [];
-
   const allUsersData = JSON.parse(localStorage.getItem("users")) || [];
 
   const filteredUsers = allUsersData.filter((user) =>
