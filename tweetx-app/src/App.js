@@ -11,7 +11,7 @@ import Feed from "./components/feeds/Feed";
 //import ProfileLayout from "./router/ProfileLayout";
 import Users from "./components/users/Users";
 import Profile from "./components/profile/Profile";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Router } from "react-router-dom";
 import Navbar from "./navbar/Navbar";
 import Signup from "./components/accounts/signup/Signup";
 import Login from "./components/accounts/login/Login";
@@ -21,6 +21,7 @@ import ProfileHeader from "./components/profile/Header";
 import PostList from "./components/profile/PostList";
 import FollowersList from "./components/profile/FollowersList";
 import FollowingList from "./components/profile/FollowingList";
+import Modal from "./components/feeds/Modal";
 
 function App() {
   // const [formData, setFormData] = useState({
@@ -55,7 +56,8 @@ function App() {
           path="feed"
           element={
             <>
-              <Navbar /> <Feed formData={formData} />
+              <Navbar />
+              <Feed formData={formData} />
             </>
           }
         />
@@ -68,22 +70,25 @@ function App() {
             </>
           }
         />
-        {/* <Route
-          path="profile"
+
+        <Route
+          path="modal"
           element={
             <>
               <Navbar />
-              <Header />
-              <Profile />
+              <ProfileHeader />
+              <Modal />
+              <PostList />
             </>
           }
-        /> */}
+        />
         <Route
           path="profile"
           element={
             <>
               <Navbar />
               <ProfileHeader />
+              <Modal />
               <PostList />
             </>
           }
@@ -94,6 +99,7 @@ function App() {
             <>
               <Navbar />
               <ProfileHeader />
+              <Modal />
               <PostList />
             </>
           }

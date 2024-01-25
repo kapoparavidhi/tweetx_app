@@ -7,8 +7,8 @@ const Popup = ({ onClose, onPost }, { fromData }) => {
     if (sentence.trim() !== "") {
       const post_id = new Date().getTime().toString();
       const created_time = new Date();
-      const userId = 1;
-      onPost({ post_id, description: sentence, created_time, userId });
+      const user_Id = 1;
+      onPost({ post_id, description: sentence, created_time, user_Id });
 
       onClose();
     } else {
@@ -19,7 +19,7 @@ const Popup = ({ onClose, onPost }, { fromData }) => {
   return (
     <div className="popup flex justify-center items-center">
       <textarea
-        className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        className="block p-2.5 w-[400px] h-[100px] text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500"
         placeholder="Write your sentence here..."
         value={sentence}
         onChange={(e) => setSentence(e.target.value)}
@@ -29,14 +29,16 @@ const Popup = ({ onClose, onPost }, { fromData }) => {
         <div>
           <button
             class="bg-pink-400 hover:bg-pink-500 text-white font-bold py-2 px-4 border border-pink-500 rounded"
-            onClick={handlePost}>
+            onClick={handlePost}
+          >
             Post
           </button>
         </div>
         <div>
           <button
             class="bg-pink-400 hover:bg-pink-500 text-white font-bold py-2 px-4 border border-pink-500 rounded"
-            onClick={onClose}>
+            onClick={onClose}
+          >
             Cancel
           </button>
         </div>

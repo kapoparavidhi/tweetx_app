@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import bgImg from "../../../images/bg.png";
 
 const SignUp = ({ onSignUp }) => {
   const [name, setName] = useState("");
@@ -34,7 +35,7 @@ const SignUp = ({ onSignUp }) => {
   };
 
   return (
-    <div className="ml-20 mt-20">
+    <div className="pl-20 pt-20 relative h-screen overflow-y-auto">
       <h1 className="flex items-center text-5xl font-extrabold dark:text-white text-pink-400 ">
         TweetX
       </h1>
@@ -111,6 +112,9 @@ const SignUp = ({ onSignUp }) => {
             </Link>
           </form>
         </div>
+      </div>
+      <div className="absolute z-0 top-0 right-0">
+        <img src={bgImg} />
       </div>
     </div>
   );
